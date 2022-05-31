@@ -11,6 +11,7 @@
     background-color: black;
     justify-content: space-between;
     align-items: center;
+    flex-flow: row wrap;
 }
 
 .title{
@@ -59,8 +60,15 @@ img{
     text-decoration: none;
     color: white;
     font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
 }
 
 .link:hover{
     color: rgb(204, 164, 61);
+}
+
+@media only screen and ( max-width: 410px ) {
+  .header {
+    justify-content: center;
+  }
 }
