@@ -1,18 +1,26 @@
 .ratingStar, .commentRatingStar {
-  background-color: none;
+  background-color: rgb(218, 165, 32, 0.8);
   border: none;
   color: black;
   outline: none;
-}
-
-.ratingStar {
-  font-size: 2em;
+  font-size: 1.5em;
+  height: 30px;
 }
 
 .checkedStar {
-  color: blue;
+  color: rgb(255, 255, 255, 0.8);
 }
 
 .commentRatingStar {
-  font-size: 1em;
+  font-size: 1.5em;
+}
+
+.ratingStar:first-child, .commentRatingStar:first-child {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.ratingStar:last-child, .commentRatingStar:last-child {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }

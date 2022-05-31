@@ -46,7 +46,7 @@ export default class RatingStars extends React.Component {
   render() {
     const { position } = this.props;
     return (
-      <div>
+      <div className="rating-stars">
         {this.generateStars(position)}
       </div>
     );

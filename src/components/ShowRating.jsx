@@ -6,12 +6,14 @@ class ShowRating extends React.Component {
   render() {
     const { email, starPosition, comment } = this.props;
     return (
-      <div>
-        <div>
-          <span>{ email }</span>
-          <RatingStarRender starPosition={ starPosition } />
+      <div className="outter-comment-container">
+        <div className="info-comment-container">
+          <span className="info-comment-email">{ email }</span>
+          <div className="info-comment-stars">
+            <RatingStarRender starPosition={ starPosition } />
+          </div>
         </div>
-        <div>
+        <div className="info-comment-text">
           <p>{ comment }</p>
         </div>
       </div>
