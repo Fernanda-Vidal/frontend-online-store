@@ -1,6 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import RatingStars from './RatingStars';
+import '../css/rating.css';
 
 class Rating extends React.Component {
   render() {
@@ -9,8 +10,8 @@ class Rating extends React.Component {
     const { addComment } = this.props;
     const { handleChange, rateProduct, generateID } = this.props;
     return (
-      <form>
-        <div className="email">
+      <form className="outter-comment-container">
+        <div className="email-container">
           <input
             type="email"
             data-testid="product-detail-email"
@@ -20,18 +21,11 @@ class Rating extends React.Component {
             onChange={ handleChange }
             required
           />
-          <RatingStars rateProduct={ rateProduct } position={ rating } />
+          <div className="star-container">
+            <RatingStars rateProduct={ rateProduct } position={ rating } />
+          </div>
         </div>
-        <div>
-          <textarea
-            data-testid="product-detail-evaluation"
-            placeholder="Mensagem(opcional)"
-            value={ messageRating }
-            name="messageRating"
-            onChange={ handleChange }
-          />
-        </div>
-        <div>
+        <div className="comment-button-add-container">
           <button
             data-testid="submit-review-btn"
             type="button"
@@ -42,6 +36,16 @@ class Rating extends React.Component {
           >
             Avaliar
           </button>
+        </div>
+        <div className="comment-text-area-container">
+          <textarea
+            data-testid="product-detail-evaluation"
+            placeholder="Mensagem(opcional)"
+            value={ messageRating }
+            name="messageRating"
+            onChange={ handleChange }
+            className="comment-text-area"
+          />
         </div>
       </form>
     );

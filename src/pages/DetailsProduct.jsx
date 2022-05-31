@@ -3,7 +3,8 @@ import propTypes from 'prop-types';
 import AddCartButton from '../components/AddCartButton';
 import Rating from '../components/Rating';
 import ShowRating from '../components/ShowRating';
-import ToShoppingCartButton from '../components/ToShoppingCartButton';
+import Header from '../components/Header';
+import '../css/detailsProduct.css';
 
 export default class DetailsProduct extends React.Component {
   state = {
@@ -78,7 +79,7 @@ export default class DetailsProduct extends React.Component {
 
   generateName(name, price) {
     return (
-      <div>
+      <div className="name-box">
         <h2 className="name-container">
           <span data-testid="product-detail-name">{ name }</span>
           <span>{ ` - R$${price}` }</span>
@@ -105,30 +106,25 @@ export default class DetailsProduct extends React.Component {
     const { setImage } = this.state;
     const text = 'Adicionar ao carrinho.';
     const datatest = 'product-detail-add-to-cart';
-    const picNum = 4;
+    const picNum = 5;
     const picList = pictures.slice(0, picNum);
     return (
       <section className="details-page">
+        <div className="header-container">
+          <Header screen={ () => this.update } quantity={ this.readsQuantity() } />
+        </div>
+        <div className="header-page-ruler" />
         <main className="page-container">
+          {this.generateName(title, price)}
+          <div className="pŕoduct-details-hr" />
           <div className="product-illustration-container">
-            <div className="main-image-title-container">
-              {this.generateName(title, price)}
+            <div className="main-thumb-container">
               <img
                 src={ setImage }
                 alt={ title }
                 className="main-image-container"
               />
             </div>
-            <AddCartButton
-              datatest={ datatest }
-              text={ text }
-              product={ product }
-              screen={ () => this.update() }
-            />
-            <ToShoppingCartButton
-              quantity={ this.readsQuantity() }
-              screen={ () => this.update() }
-            />
             <div className="product-pictures">
               {
                 picList.slice(0, picNum).map((picture) => {
@@ -149,7 +145,16 @@ export default class DetailsProduct extends React.Component {
                 })
               }
             </div>
+            <div className="product-details-btn-container">
+              <AddCartButton
+                datatest={ datatest }
+                text={ text }
+                product={ product }
+                screen={ () => this.update() }
+              />
+            </div>
           </div>
+          <div className="pŕoduct-details-hr" />
           <div className="product-attributes">
             <ul className="attribute-list">
               {
@@ -163,12 +168,15 @@ export default class DetailsProduct extends React.Component {
               {
                 attributes.map((attribute) => {
                   const key = attribute.id;
-                  if (attribute.value_name === 'undefined'
-                    || attribute.value_name === null) {
+                  console.log(attribute.value_name);
+                  if (attribute.value_name === null
+                    || attribute.value_name === undefined
+                    || attribute.value_name.toLowerCase().includes('described')
+                    || attribute.value_name.toLowerCase().includes('undefined')) {
                     return null;
                   }
                   return (
-                    <li key={ key }>
+                    <li key={ key } className="attrList-item">
                       {
                         `${attribute.name}: ${attribute.value_name}`
                       }
@@ -177,6 +185,10 @@ export default class DetailsProduct extends React.Component {
                 })
               }
             </ul>
+          </div>
+        </main>
+        <section className="comment-section">
+          <div className="create-a-comment-section">
             <Rating
               addComment={ this.addComment }
               handleChange={ this.handleChange }
@@ -184,23 +196,25 @@ export default class DetailsProduct extends React.Component {
               generateID={ this.generateID }
               comment={ comment }
             />
-            <div>
-              {
-                commentList.map((commentIndex) => {
-                  const key = commentIndex.id;
-                  return (
-                    <ShowRating
-                      key={ key }
-                      email={ commentIndex.email }
-                      comment={ commentIndex.messageRating }
-                      starPosition={ commentIndex.rating }
-                    />
-                  );
-                })
-              }
-            </div>
           </div>
-        </main>
+          <div className="pŕoduct-details-hr" />
+          <div className="comment-list">
+            <h2 className="comment-title">Comentários</h2>
+            {
+              commentList.map((commentIndex) => {
+                const key = commentIndex.id;
+                return (
+                  <ShowRating
+                    key={ key }
+                    email={ commentIndex.email }
+                    comment={ commentIndex.messageRating }
+                    starPosition={ commentIndex.rating }
+                  />
+                );
+              })
+            }
+          </div>
+        </section>
       </section>
     );
   }

@@ -59,7 +59,7 @@ class MainScreen extends React.Component {
               type="text"
               id="busca"
               data-testid="query-input"
-              placeholder="Digite nome do produto."
+              placeholder="Digite o nome do produto."
               value={ searchTerm }
               name="searchTerm"
               onChange={ this.handleChange }
@@ -81,7 +81,7 @@ class MainScreen extends React.Component {
             {
               products.length > 0
                 ? <CardProducts products={ products } screen={ () => this.update() } />
-                : <p>Nenhum produto foi encontrado</p>
+                : <p className="mainscreen-no-products">Nenhum produto foi encontrado</p>
             }
           </div>
         </div>

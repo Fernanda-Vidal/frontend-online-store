@@ -29,7 +29,7 @@ export default class Categories extends React.Component {
         <div className="categories-header2-container">
           <h2>Categorias</h2>
         </div>
-        <div className="categories-container">
+        <div className="category-list-container">
           <ul className="categories-list">
             {
               categoryList.map((category) => {

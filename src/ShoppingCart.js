@@ -21,7 +21,6 @@ class ShoppingCart extends React.Component {
       <div>
         <CardProductsToBuy
           screen={ () => this.update() }
-          quantity={ this.readsQuantity() }
         />
         <Link to="/CartCheckout">
           <button type="button" data-testid="checkout-products">Finalizar Compra</button>
@@ -33,7 +32,10 @@ class ShoppingCart extends React.Component {
   render() {
     return (
       <div>
-        <Header quantity={ this.readsQuantity() } />
+        <div className="header-container">
+          <Header screen={ () => this.update } quantity={ this.readsQuantity() } />
+        </div>
+        <div className="header-page-ruler" />
         {
           sessionStorage.productsToBuy.length === 2
           || sessionStorage.productsToBuy === undefined

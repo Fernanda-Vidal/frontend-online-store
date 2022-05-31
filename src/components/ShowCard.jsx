@@ -26,7 +26,7 @@ export default class ShowCard extends React.Component {
           </div>
           <div className="product-price">
             <span>R$</span>
-            <span>{ product.price }</span>
+            <span>{ product.price.toFixed(2) }</span>
           </div>
         </div>
       </Link>
