@@ -26,7 +26,8 @@ class ShoppingCart extends React.Component {
         <Link to="/CartCheckout">
           <button type="button" data-testid="checkout-products">Finalizar Compra</button>
         </Link>
-      </div>);
+      </div>
+    );
   }
 
   render() {

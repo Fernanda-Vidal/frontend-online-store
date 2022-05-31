@@ -1,62 +1,79 @@
 import React from 'react';
+import Header from './Header';
+import '../css/cartCheckout.css';
+import Visa from '../image/Visa.png';
+import Master from '../image/Master.png';
+import Amex from '../image/Amex.png';
+import Boleto from '../image/Boleto.png';
+import Pix from '../image/Pix.png';
+import FormInputText from './FormInputText';
+import FormRadio from './FormRadio';
 
 class CartCheckout extends React.Component {
+  readsQuantity() {
+    if (sessionStorage.productsToBuy === undefined) {
+      sessionStorage.setItem('productsToBuy', JSON.stringify([]));
+    }
+    const productsToBuy = JSON.parse(sessionStorage.getItem('productsToBuy'));
+    return productsToBuy.length;
+  }
+
   render() {
     return (
       <div>
-        <form>
-          <label htmlFor="name">
-            {' '}
-            Nome Completo:
-            <input type="text" data-testid="checkout-fullname" name="name" />
-          </label>
-          <label htmlFor="email">
-            {' '}
-            E-mail:
-            <input type="email" data-testid="checkout-email" name="email" />
-          </label>
-          <label htmlFor="cpf">
-            {' '}
-            CPF:
-            <input type="text" data-testid="checkout-cpf" name="cpf" />
-          </label>
-          <label htmlFor="phone">
-            {' '}
-            Telefone:
-            <input type="tel" data-testid="checkout-phone" name="" />
-          </label>
-          <label htmlFor="cep">
-            {' '}
-            CEP:
-            <input type="text" data-testid="checkout-cep" name="cep" />
-          </label>
-          <label htmlFor="address">
-            {' '}
-            Endereço:
-            <input type="text" data-testid="checkout-address" name="address" />
-          </label>
-        </form>
-        <form>
-          <label htmlFor="boleto">
-            {' '}
-            Boleto:
-            <input type="radio" value="Boleto" name="boleto" />
-          </label>
-          <label htmlFor="cartões">
-            {' '}
-            Cartão de Crédito:
-            <label htmlFor="Visa">
-              <input type="radio" value="Visa" />
-            </label>
-            <label htmlFor="MasterCard">
-              <input type="radio" value="MasterCard" />
-            </label>
-            <label htmlFor="Elo">
-              <input type="radio" value="Elo" />
-            </label>
-          </label>
-        </form>
-        <button type="submit">Comprar</button>
+        <div className="header-container">
+          <Header quantity={ this.readsQuantity() } />
+        </div>
+        <div className="header-page-ruler" />
+        <div className="formsCheckout">
+          <div id="formsData">
+            <FormInputText
+              type="text"
+              data="checkout-fullname"
+              name="name"
+              text="Nome Completo"
+            />
+            <br />
+            <FormInputText
+              type="email"
+              data="checkout-email"
+              name="email"
+              text="E-mail"
+            />
+            <br />
+            <FormInputText type="text" data="checkout-cpf" name="cpf" text="CPF" />
+            <br />
+            <FormInputText
+              type="text"
+              data="checkout-phone"
+              name="phone"
+              text="Telefone:"
+            />
+            <br />
+            <FormInputText type="text" data="checkout-cep" name="cep" text="CEP:" />
+            <br />
+            <FormInputText
+              type="text"
+              data="checkout-address"
+              name="address"
+              text="Endereço:"
+            />
+          </div>
+          <div id="formsPayment">
+            <form>
+              <FormRadio value="boleto" img={ Boleto } text="Boleto" />
+              <br />
+              <FormRadio value="pix" img={ Pix } text="Pix" />
+              <br />
+              <FormRadio value="visa" img={ Visa } />
+              <br />
+              <FormRadio value="masterCart" img={ Master } />
+              <br />
+              <FormRadio value="amex" img={ Amex } />
+            </form>
+            <button id="buttonCheckout" type="submit">Comprar</button>
+          </div>
+        </div>
       </div>
     );
   }
