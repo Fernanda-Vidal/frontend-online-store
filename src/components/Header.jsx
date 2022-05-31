@@ -9,10 +9,10 @@ class Header extends React.Component {
   render() {
     const { screen, quantity } = this.props;
     return (
-      <div className="header">
+      <header className="header">
         <div className="title">
           <Link className="link" to="/">
-            <h1>DarkMarket</h1>
+            <span>DarkMarket</span>
           </Link>
         </div>
         <nav>
@@ -26,7 +26,7 @@ class Header extends React.Component {
             </div>
           </Link>
         </nav>
-      </div>
+      </header>
     );
   }
 }
