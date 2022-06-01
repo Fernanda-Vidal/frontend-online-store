@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './Header';
 import '../css/cartCheckout.css';
-import Visa from '../image/Visa.png';
-import Master from '../image/Master.png';
-import Amex from '../image/Amex.png';
-import Boleto from '../image/Boleto.png';
-import Pix from '../image/Pix.png';
+// import Visa from '../image/Visa.png';
+// import Master from '../image/Master.png';
+// import Amex from '../image/Amex.png';
+// import Boleto from '../image/Boleto.png';
+// import Pix from '../image/Pix.png';
 import FormInputText from './FormInputText';
 import FormRadio from './FormRadio';
 
@@ -24,56 +24,50 @@ class CartCheckout extends React.Component {
         <div className="header-container">
           <Header quantity={ this.readsQuantity() } />
         </div>
-        <div className="header-page-ruler" />
-        <div className="formsCheckout">
-          <div id="formsData">
-            <FormInputText
-              type="text"
-              data="checkout-fullname"
-              name="name"
-              text="Nome Completo"
-            />
-            <br />
-            <FormInputText
-              type="email"
-              data="checkout-email"
-              name="email"
-              text="E-mail"
-            />
-            <br />
-            <FormInputText type="text" data="checkout-cpf" name="cpf" text="CPF" />
-            <br />
-            <FormInputText
-              type="text"
-              data="checkout-phone"
-              name="phone"
-              text="Telefone:"
-            />
-            <br />
-            <FormInputText type="text" data="checkout-cep" name="cep" text="CEP:" />
-            <br />
-            <FormInputText
-              type="text"
-              data="checkout-address"
-              name="address"
-              text="Endereço:"
-            />
+        <form>
+          <div className="header-page-ruler" />
+          <div className="formsCheckout">
+            <div className="formsData">
+              <FormInputText
+                type="text"
+                data="checkout-fullname"
+                name="name"
+                text="Nome Completo"
+              />
+              <br />
+              <FormInputText
+                type="email"
+                data="checkout-email"
+                name="email"
+                text="E-mail"
+              />
+              <br />
+              <FormInputText type="text" data="checkout-cpf" name="cpf" text="CPF" />
+              <br />
+              <FormInputText
+                type="text"
+                data="checkout-phone"
+                name="phone"
+                text="Telefone:"
+              />
+              <br />
+              <FormInputText type="text" data="checkout-cep" name="cep" text="CEP:" />
+              <br />
+              <FormInputText
+                type="text"
+                data="checkout-address"
+                name="address"
+                text="Endereço:"
+              />
+            </div>
+            <div className="formsPayment">
+              <FormRadio />
+            </div>
           </div>
-          <div id="formsPayment">
-            <form>
-              <FormRadio value="boleto" img={ Boleto } text="Boleto" />
-              <br />
-              <FormRadio value="pix" img={ Pix } text="Pix" />
-              <br />
-              <FormRadio value="visa" img={ Visa } />
-              <br />
-              <FormRadio value="masterCart" img={ Master } />
-              <br />
-              <FormRadio value="amex" img={ Amex } />
-            </form>
-            <button id="buttonCheckout" type="submit">Comprar</button>
+          <div className="divButtonForms">
+            <button className="buttonCheckout" type="submit">Comprar</button>
           </div>
-        </div>
+        </form>
       </div>
     );
   }
