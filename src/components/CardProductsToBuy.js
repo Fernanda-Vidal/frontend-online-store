@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import '../css/shoppingCart.css';
 
 export default class CardProductsToBuy extends React.Component {
   state = {
@@ -95,43 +96,56 @@ export default class CardProductsToBuy extends React.Component {
             return (
               <div key={ key }>
                 <div>
-                  <span data-testid="shopping-cart-product-name">{ product.title }</span>
+                  <h2 data-testid="shopping-cart-product-name">{ product.title }</h2>
                 </div>
                 <div>
-                  <div>
-                    <img src={ product.thumbnail } alt="" />
-                  </div>
-                  <div>
-                    <span>R$</span>
-                    <span>{ product.price }</span>
+                  <div className="image-cart-container">
+                    <img
+                      src={ product.thumbnail }
+                      alt=""
+                      className="image-cart"
+                    />
                   </div>
                 </div>
-                <div>
-                  <button
-                    type="button"
-                    data-testid="product-decrease-quantity"
-                    onClick={ () => this.productChangeQuantity(key, num) }
-                  >
-                    -
-                  </button>
-                  <span data-testid="shopping-cart-product-quantity">
-                    { productId[1] }
-                  </span>
-                  <button
-                    type="button"
-                    data-testid="product-increase-quantity"
-                    onClick={ () => this.productChangeQuantity(key, 1) }
-                    value={ key }
-                  >
-                    +
-                  </button>
-                  <button
-                    type="button"
-                    onClick={ () => this.removeProduct(key) }
-                  >
-                    Remover
-                  </button>
+                <div className="price">
+                  {/* <p>R$</p> */}
+                  <p>
+                    R$
+                    { product.price }
 
+                  </p>
+                  <div>
+                    <button
+                      type="button"
+                      className="button-cart"
+                      data-testid="product-decrease-quantity"
+                      onClick={ () => this.productChangeQuantity(key, num) }
+                    >
+                      -
+                    </button>
+                    <span
+                      data-testid="shopping-cart-product-quantity"
+                      className="qtd"
+                    >
+                      { productId[1] }
+                    </span>
+                    <button
+                      type="button"
+                      className="button-cart"
+                      data-testid="product-increase-quantity"
+                      onClick={ () => this.productChangeQuantity(key, 1) }
+                      value={ key }
+                    >
+                      +
+                    </button>
+                    <button
+                      type="button"
+                      className="button-cart"
+                      onClick={ () => this.removeProduct(key) }
+                    >
+                      Remover
+                    </button>
+                  </div>
                 </div>
               </div>
             );

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CardProductsToBuy from './components/CardProductsToBuy';
 import Header from './components/Header';
+import './css/shoppingCart.css';
 
 class ShoppingCart extends React.Component {
   update = () => {
@@ -22,8 +23,14 @@ class ShoppingCart extends React.Component {
         <CardProductsToBuy
           screen={ () => this.update() }
         />
-        <Link to="/CartCheckout">
-          <button type="button" data-testid="checkout-products">Finalizar Compra</button>
+        <Link to="/CartCheckout" className="checkout-buy">
+          <button
+            type="button"
+            data-testid="checkout-products"
+            className="button-cart buy"
+          >
+            Finalizar Compra
+          </button>
         </Link>
       </div>
     );
