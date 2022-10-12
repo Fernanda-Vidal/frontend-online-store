@@ -86,127 +86,127 @@
 # Requisitos
 
 
-## 1. Implemente o módulo de acesso à api do Mercado Livre
+### 1. Implemente o módulo de acesso à api do Mercado Livre
 
 **PRIORIDADE 0** 
 
 
-## 2. Crie uma página de listagem de produtos vazia
+### 2. Crie uma página de listagem de produtos vazia
 
 **PRIORIDADE 0** 
 
 
 
-## 3. Crie a página do carrinho de compras
+### 3. Crie a página do carrinho de compras
 
 **PRIORIDADE 1**
 
 
 
-## 4. Liste as categorias de produtos disponíveis via API na página principal
+### 4. Liste as categorias de produtos disponíveis via API na página principal
 
 **PRIORIDADE 1**
 
 
 
-## 5. Liste os produtos buscados por termos, com os dados resumidos, associados a esses termos
+### 5. Liste os produtos buscados por termos, com os dados resumidos, associados a esses termos
 
 **PRIORIDADE 1**
 
 
 
-## 6. Selecione uma categoria e mostre somente os produtos daquela categoria
+### 6. Selecione uma categoria e mostre somente os produtos daquela categoria
 
 **PRIORIDADE 2** 
 
 
 
-## 7. Redirecione para uma tela com a exibição detalhada ao clicar na exibição resumida de um produto
+### 7. Redirecione para uma tela com a exibição detalhada ao clicar na exibição resumida de um produto
 
 **PRIORIDADE 3**
 
 
 
-## 8. Adicione produtos ao carrinho a partir da tela de listagem de produtos
+### 8. Adicione produtos ao carrinho a partir da tela de listagem de produtos
 
 **PRIORIDADE 3**
 
 
 
-## 9. Adicione um produto ao carrinho a partir de sua tela de exibição detalhada
+### 9. Adicione um produto ao carrinho a partir de sua tela de exibição detalhada
 
 **PRIORIDADE 3**
 
 
 
-## 10. Visualize a lista de produtos adicionados ao carrinho em sua página e permita a manipulação da sua quantidade
+### 10. Visualize a lista de produtos adicionados ao carrinho em sua página e permita a manipulação da sua quantidade
 
 **PRIORIDADE 3**
 
 
-## 11. Avalie e comente acerca de um produto em sua tela de exibição detalhada
+### 11. Avalie e comente acerca de um produto em sua tela de exibição detalhada
 
 **PRIORIDADE 3** 
 
 
 
-## 12. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento
+### 12. Finalize a compra vendo um resumo dela, preenchendo os seus dados e escolhendo a forma de pagamento
 
 **PRIORIDADE 4** 
 
 
 
-# Requisitos Bônus
+## Requisitos Bônus
 
-## 13. Mostre junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
+### 13. Mostre junto ao ícone do carrinho a quantidade de produtos dentro dele, em todas as telas em que ele aparece
 
 **PRIORIDADE 4**
 
 
 
-## 14. Limite a quantidade de produtos adicionados ao carrinho pela quantidade disponível em estoque
+### 14. Limite a quantidade de produtos adicionados ao carrinho pela quantidade disponível em estoque
 
 **PRIORIDADE 4** - 
 
 
 
-## 15. Mostre quais produtos tem o frete grátis
+### 15. Mostre quais produtos tem o frete grátis
 
 **PRIORIDADE 4**
 
 
 
-# Requisitos não avaliativos
+## Requisitos não avaliativos
 
-## 16. Faça um layout para o site
-
-**PRIORIDADE 5** 
-
-
-## 17. Faça um layout responsivo para o site
-
-**PRIORIDADE 5**
-
-
-## 18. Crie um seletor dropdown para ordenar a lista de produto por maior e menor preço
-
-**PRIORIDADE 5**
-
-
-
-## 19. Coloque uma animação no carrinho para quando um produto for adicionado
+### 16. Faça um layout para o site
 
 **PRIORIDADE 5** 
 
 
+### 17. Faça um layout responsivo para o site
 
-## 20. Crie um slider lateral para exibir o carrinho na tela principal
+**PRIORIDADE 5**
+
+
+### 18. Crie um seletor dropdown para ordenar a lista de produto por maior e menor preço
 
 **PRIORIDADE 5**
 
 
 
-## 21. Destaque, na tela principal, os produtos já adicionados ao carrinho
+### 19. Coloque uma animação no carrinho para quando um produto for adicionado
+
+**PRIORIDADE 5** 
+
+
+
+### 20. Crie um slider lateral para exibir o carrinho na tela principal
+
+**PRIORIDADE 5**
+
+
+
+### 21. Destaque, na tela principal, os produtos já adicionados ao carrinho
 
 **PRIORIDADE 5** 
 
