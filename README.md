@@ -6,6 +6,7 @@
 
   Neste projeto criamos uma loja online simplificada e sem persistência de dados. O projeto consome a API do mercado livre e foi utilizado react.js, componentes com estado, react router para desenvolvimento da aplicação. Nela é possível buscas por produtos e categorias, adicionar e remover produtos no carrinho de compras, visualizar detalhes e avaliações prévias de um produto, bem como criar uma nova avaliação e finalizar uma compra.
 
+A estrutura do projeto foi fornecida pela Trybe, o código do grupo foi desenvolvido nos arquivos nos diretórios: src/ components css pages services.
 
 # Requisitos
 ### 1. Implemente o módulo de acesso à api do Mercado Livre
